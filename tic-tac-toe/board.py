@@ -14,6 +14,13 @@ class Board:
             for col in range(3):
                 self.board[row][col] = ''
 
+    def is_full(self)->bool:
+        for row in range(3):
+            for col in range(3):
+                if self.board[row][col] == '':
+                    return False
+        return True
+
     def is_valid_move(self, column:int, row:int)->bool:
         return self.board[row][column] == ''
 
